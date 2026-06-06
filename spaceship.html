@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StarFall Defender Game</title>
+
+    <link rel="stylesheet" href="spaceship.css" />
+  </head>
+
+  <body>
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="start-screen" class="screen">
+      <h1 class="title-glow">StarFall Defender</h1>
+
+      <p
+        style="
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: #ccc;
+          letter-spacing: 2px;
+          margin-bottom: 30px;
+        "
+      >
+        DODGE. SURVIVE. DESTROY.
+      </p>
+
+      <button class="btn-start" onclick="startGame()">START MISSION</button>
+    </div>
+
+    <div id="lose-screen" class="screen">
+      <h1
+        style="font-size: 4rem; color: #ff0000; text-shadow: 0 0 20px #ff0000"
+      >
+        MISSION FAILED
+      </h1>
+
+      <div class="btn-group">
+        <button onclick="restartGame()">TRY AGAIN</button>
+        <button onclick="goHome()" class="btn-secondary">GO HOME</button>
+      </div>
+    </div>
+
+    <div id="win-screen" class="screen">
+      <h1
+        style="font-size: 4rem; color: #00ff00; text-shadow: 0 0 20px #00ff00"
+      >
+        VICTORY
+      </h1>
+
+      <div class="btn-group">
+        <button onclick="restartGame()">PLAY AGAIN</button>
+        <button onclick="goHome()" class="btn-secondary">GO HOME</button>
+      </div>
+    </div>
+
+    <div id="hud">
+      Stage: <span id="stage-display">1</span> <br />
+      Targets: <span id="count">0</span>/<span id="target-total">15</span>
+    </div>
+
+    <div id="boss-health-container">
+      <div id="boss-health-fill"></div>
+    </div>
+
+    <div id="stage-alert">GET READY... STAGE 1</div>
+
+    <div id="ui" class="screen">
+      <div id="msg" class="warning">BOSS IS COMING</div>
+      <div id="quote" class="quote">"Good One! Now let's defeat the Boss"</div>
+    </div>
+
+    <script src="spaceship.js"></script>
+  </body>
+</html>
